@@ -9,4 +9,7 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px; }
 
+form {
+  flex-direction: row; }
+
 /*# sourceMappingURL=App.css.map */
