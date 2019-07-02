@@ -1,14 +1,27 @@
 import React from 'react';
 import './ListItem.css';
+import './index.css';
+
+class List extends React.Component {
+
+
+    render() {
+        return (
+            <ul className="flex">
+                {this.props.listItems.map(item => <ListItem desc={item} />)}
+            </ul>
+        )
+    }
+}
+
 
 class ListItem extends React.Component {
 
     render() {
         return (
-            <ul id="ul" className="list-item">
-                <li>{this.props.desc}</li>
-            </ul>
+            <li>{this.props.desc}</li>
         )
     }
 }
-export default ListItem;
+
+export default List;

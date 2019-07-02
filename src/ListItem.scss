@@ -1,0 +1,13 @@
+ul{
+    flex-direction: column;
+    list-style-type: none;
+    background-color:white;
+    color:gray;
+
+    li{
+        width: 100%;
+        padding-left: 1em;
+        padding: .5em;
+    border-bottom: 1px solid #d8d5d5;
+    }
+}

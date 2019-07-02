@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Input from './Input';
-import ListItem from './ListItem';
+import List from './ListItem';
 import { directive } from '@babel/types';
 
 class App extends React.Component {
@@ -16,11 +16,11 @@ class App extends React.Component {
 
     this.setState(prevState => {
       return {
-        allListItems: prevState.allListItems.push(inputValue)
+        allListItems: prevState.allListItems.push(this.inputValue)
       }
     })
 
-    console.log(this.state);
+    console.log('hello');
   }
 
 
@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        {this.state.allListItems.map(item => <ListItem desc={item} />)}
+        <List listItems={this.state.allListItems} />
         <Input handleAddItem={this.addItem} />
       </div>
     )

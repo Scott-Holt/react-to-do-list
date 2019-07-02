@@ -9,7 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: white; }
+  color: white;
+  font-family: 'Montserrat', sans-serif; }
 
 .flex {
   display: flex;
