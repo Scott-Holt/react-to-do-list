@@ -8,7 +8,11 @@ class List extends React.Component {
     render() {
         return (
             <ul className="flex">
-                {this.props.listItems.map(item => <ListItem desc={item} />)}
+                {this.props.listItems.map((item, index) =>
+                    <ListItem
+                        desc={item}
+                        key={index}
+                    />)}
             </ul>
         )
     }

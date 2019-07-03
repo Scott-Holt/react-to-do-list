@@ -16,12 +16,14 @@ class App extends React.Component {
 
     this.setState(prevState => {
       return {
-        allListItems: prevState.allListItems.push(this.inputValue)
+        allListItems: prevState.allListItems.push(inputValue)
       }
     })
-
-    console.log('hello');
   }
+
+  // handleAppendItem = () => {
+
+  // }
 
 
   render() {
