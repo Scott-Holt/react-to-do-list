@@ -6,15 +6,37 @@ import { format } from 'url';
 
 class Input extends React.Component {
 
+    state = {
+        value: ''
+    }
+
+    handleValueChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+        console.log(this.state.value)
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.addItem(this.state.value, this.props.id);
+    }
 
     render() {
         return (
-            <form className="flex">
-                <div className="text-field flex">
-                    <span>Create New Item:</span>
-                    <input id="new-item-field"></input>
-                </div>
-                <div className='button flex' onClick={() => this.props.handleAddItem()}>Add Item</div>
+            <form className="flex" onSubmit={this.handleSubmit}>
+                <input
+                    id="new-item-field"
+                    type="text"
+                    placeholder="enter new item here"
+                    onChange={this.handleValueChange}
+                    value={this.state.value}
+                />
+                <input
+                    type="submit"
+                    value="Add Item"
+                    className='button flex'
+                />
             </form >
 
         )

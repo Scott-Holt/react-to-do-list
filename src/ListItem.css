@@ -7,6 +7,20 @@ ul {
     width: 100%;
     padding-left: 1em;
     padding: .5em;
-    border-bottom: 1px solid #d8d5d5; }
+    border-bottom: 1px solid #d8d5d5;
+    justify-content: space-between !important; }
+
+.list-content {
+  width: 100%; }
+  .list-content i {
+    color: #d0d0d0; }
+    .list-content i:hover {
+      cursor: pointer;
+      color: red;
+      transition: .6s;
+      -webkit-transition: .6s;
+      -moz-transition: .6s;
+      -ms-transition: .6s;
+      -o-transition: .6s; }
 
 /*# sourceMappingURL=listItem.css.map */

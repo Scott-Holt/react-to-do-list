@@ -7,13 +7,17 @@ class List extends React.Component {
 
     render() {
         return (
-            <ul className="flex">
-                {this.props.listItems.map((item, index) =>
-                    <ListItem
-                        desc={item}
-                        key={index}
-                    />)}
-            </ul>
+            <div>
+                <ul className="flex">
+                    {this.props.listItems.map((item, index) =>
+                        <ListItem
+                            desc={item}
+                            key={index}
+                            id={index}
+                            removeItem={this.props.removeItem}
+                        />)}
+                </ul>
+            </div>
         )
     }
 }
@@ -21,9 +25,19 @@ class List extends React.Component {
 
 class ListItem extends React.Component {
 
+
     render() {
         return (
-            <li>{this.props.desc}</li>
+            <div className="flex list-content">
+                <li className="flex">{this.props.desc}
+                    <i
+                        id="trash"
+                        className="fa fa-trash"
+                        onClick={() => { this.props.removeItem(this.props.id) }}
+                    ></i>
+                </li>
+
+            </div>
         )
     }
 }

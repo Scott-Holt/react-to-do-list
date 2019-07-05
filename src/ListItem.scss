@@ -9,5 +9,24 @@ ul{
         padding-left: 1em;
         padding: .5em;
     border-bottom: 1px solid #d8d5d5;
+    justify-content: space-between !important;
+    }
+}
+
+.list-content{
+    width: 100%;
+
+    i{
+        color:#d0d0d0;
+
+        &:hover{
+            cursor: pointer;
+            color:red;
+            transition: .6s;
+            -webkit-transition: .6s;
+            -moz-transition: .6s;
+            -ms-transition: .6s;
+            -o-transition: .6s;
+}
     }
 }
