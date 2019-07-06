@@ -2,36 +2,35 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Input from './Input';
-import List from './ListItem';
+import ListItem from './ListItem';
 import { directive } from '@babel/types';
 
-let idCounter = 0;
+let idCounter = 1;
 
 class App extends React.Component {
 
   state = {
-    allListItems: []
+    allListItems: [
+
+    ]
   }
 
 
 
   handleAddItem = (item) => {
-
     this.setState({
       allListItems: [
         ...this.state.allListItems,
-
-        item
-
+        {
+          desc: item,
+          id: idCounter
+        }
       ]
     })
-
-    idCounter++;
-    console.log(idCounter); //this is working
   }
 
 
-
+  //this currently is deleting entire list
   handleRemoveItem = (id) => {
     console.log(`item with id of ${id} was delted!`);
     this.setState(prevState => ({
@@ -44,8 +43,21 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        <List listItems={this.state.allListItems} removeItem={this.handleRemoveItem} />
-        <Input addItem={this.handleAddItem} id={idCounter} />
+
+        {this.state.allListItems.map((item, index) =>
+          <ListItem
+            removeItem={this.handleRemoveItem}
+            itemDesc={item.desc}
+            idNum={index}
+            key={index}
+          />
+        )}
+
+        <Input
+          addItem={this.handleAddItem}
+          id={idCounter}
+        />
+
       </div>
     )
   }

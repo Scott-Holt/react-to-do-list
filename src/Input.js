@@ -4,11 +4,16 @@ import './Input.css';
 import { directive } from '@babel/types';
 import { format } from 'url';
 
+
+
 class Input extends React.Component {
 
     state = {
         value: ''
     }
+
+
+
 
     handleValueChange = (e) => {
         this.setState({
@@ -17,9 +22,10 @@ class Input extends React.Component {
         console.log(this.state.value)
     }
 
+
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addItem(this.state.value, this.props.id);
+        this.props.addItem(this.state.value);
     }
 
     render() {
